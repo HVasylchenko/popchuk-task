@@ -1,5 +1,6 @@
 const express = require("express");
 const { google } = require("googleapis");
+// require('dotenv').config()
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.get("/", async (req, res) => {
     {
       headers: {
         "X-cb-user-key": "9a4e1eb5cca8a97f74eead2fcea10951",
+        // "X-cb-user-key": key,
         accept: "application/json",
       },
     }
@@ -33,6 +35,7 @@ app.get("/", async (req, res) => {
         auth,
         spreadsheetId,
         range: "Лист1!A:B",
+        // range: range,
         valueInputOption: "USER_ENTERED",
         resource: {
           values: [
